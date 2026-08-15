@@ -3,23 +3,26 @@
 ---
 ## 💾 Dataset Setup
 
-This project uses the **KTH Dataset Complete** from Kaggle. Follow the steps below to set up your Kaggle API credentials and download the dataset automatically using the provided script.
+This project uses the **KTH Action Dataset** for human action recognition and skeleton-guided text generation.
 
-### Prerequisites: Kaggle API Token
+### Manual Download
 
-1. Go to your [Kaggle Account Settings](https://www.kaggle.com/settings).
-2. Scroll down to the **API** section and click **Create New API Token**. This will download a `kaggle.json` file.
-3. Upload or place `kaggle.json` in your current working directory.
+You can download the dataset directly from Kaggle:
 
-### Downloading the Dataset
+* **Official Dataset Link**: [Kaggle - KTH Dataset Complete](https://www.kaggle.com/datasets/rishita26/kth-dataset-complete?resource=download)
 
-Run the following commands in your terminal or Google Colab notebook:
+### Expected Directory Structure
 
-```bash
-# Set up Kaggle credentials
-mkdir -p ~/.kaggle
-cp kaggle.json ~/.kaggle/
-chmod 600 ~/.kaggle/kaggle.json
+After downloading, extract the files and place them into the `data/kth/` directory as follows:
 
-# Execute the automated download script
-./download_data.sh
+```text
+Skeleton-Guided-Text-Generation/
+├── data/
+│   └── kth/
+│       ├── boxing/
+│       ├── handclapping/
+│       ├── handwaving/
+│       ├── jogging/
+│       ├── running/
+│       └── walking/
+└── ...
