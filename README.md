@@ -8,9 +8,9 @@ Traditional frame-based 3D Convolutional Neural Networks (3D-CNNs) incur heavy c
 
 # Model Architecture
 
-* **ST-GCN Core Network:** The backbone leverages a Spatio-Temporal Graph Convolutional Network (ST-GCN) to process 3D skeleton joints $(17, 3)$ across a 64-frame window. Spatial graph convolutions extract joint layout features using standard physical connectivity, while 1D temporal convolutions capture motion trajectories across frames.
+**ST-GCN Core Network:** The backbone leverages a Spatio-Temporal Graph Convolutional Network (ST-GCN) to process 3D skeleton joints $(17, 3)$ across a 64-frame window. Spatial graph convolutions extract joint layout features using standard physical connectivity, while 1D temporal convolutions capture motion trajectories across frames.
 
-* **Lightweight Optimization:** The network uses lightweight spatial-temporal blocks with spatial layout partition and global average pooling to maintain a compact parameter footprint, enabling low-latency inference on CPU environments without hardware acceleration.
+**Lightweight Optimization:** The network uses lightweight spatial-temporal blocks with spatial layout partition and global average pooling to maintain a compact parameter footprint, enabling low-latency inference on CPU environments without hardware acceleration.
 
 **Confidence-Aware Sentence Generation:** Softmax probabilities from the linear classification head are routed to a deterministic language mapping module. Based on confidence thresholds ($\ge 0.90$, $0.75\text{--}0.89$, and $0.60\text{--}0.74$), the output transitions dynamically between definitive ("The person is...") and tentative phrasing ("The person appears to be..." / "It looks like...") to enhance HRI readability.
 
@@ -18,9 +18,9 @@ Traditional frame-based 3D Convolutional Neural Networks (3D-CNNs) incur heavy c
 
 **Action Recognition Performance**
 
-**Superior Precision in Upper-Body Gestures:** The model achieved excellent performance on local upper-body movements, reaching 91%–100% accuracy across boxing, handclapping, and handwaving. This confirms the ST-GCN backbone effectively captures high-frequency spatial topology and local joint dynamics.
+* **Superior Precision in Upper-Body Gestures:** The model achieved excellent performance on local upper-body movements, reaching 91%–100% accuracy across boxing, handclapping, and handwaving. This confirms the ST-GCN backbone effectively captures high-frequency spatial topology and local joint dynamics.
 
-**Confusion in Full-Body Locomotion:** Performance dropped on full-body locomotion classes, specifically jogging (58.3%) and running (47.2%). This represents a well-known benchmark bottleneck on the KTH dataset due to subtle velocity variations between the two actions. Increasing the sampling frame rate or incorporating optical flow features would better disambiguate speed gradients.
+* **Confusion in Full-Body Locomotion:** Performance dropped on full-body locomotion classes, specifically jogging (58.3%) and running (47.2%). This represents a well-known benchmark bottleneck on the KTH dataset due to subtle velocity variations between the two actions. Increasing the sampling frame rate or incorporating optical flow features would better disambiguate speed gradients.
 
 **Impact of Early Stopping Strategy**
 
