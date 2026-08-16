@@ -38,7 +38,7 @@ Training without Early Stopping achieved a higher overall accuracy than training
 ---
 ## 💾 Dataset Setup
 
-This project uses the **KTH Action Dataset** for human action recognition and skeleton-guided text generation.
+This project uses the **KTH Action Dataset** for Spatio-Temporal Action Recognition with Natural Language.
 
 ### Manual Download
 
@@ -51,7 +51,7 @@ You can download the dataset directly from Kaggle:
 After downloading, extract the files and place them into the `data/kth/` directory as follows:
 
 ```text
-Skeleton-Guided-Text-Generation/
+Spatio-Temporal-Action-Recognition-with-Natural-Language/
 ├── data/
 │   └── kth/
 │       ├── boxing/
