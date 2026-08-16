@@ -57,7 +57,7 @@ You can download the dataset directly from Kaggle:
 After downloading, extract the files and place them into the `data/kth/` directory as follows:
 
 ```text
-Spatio-Temporal-Action-Recognition-with-Natural-Language/
+3D-Human-Action-Recognition-with-Natural-Language/
 ├── data/
 │   └── kth/
 │       ├── boxing/
