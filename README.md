@@ -1,4 +1,4 @@
-# HRI-Driven 3D Human Action Recognition via ST-GCN on KTH Dataset
+# HRI-Driven 3D Human Action Recognition via ST-GCN
 
 This repository contains an end-to-end framework for 3D human action recognition and natural communication in Human-Robot Interaction (HRI) using Spatial Temporal Graph Convolutional Networks (ST-GCN). The pipeline extracts 2D human pose skeletons from raw video sequences of the KTH dataset via MediaPipe, normalizes and structures the keypoint trajectories into COCO-17 topology, and classifies multi-frame human action dynamics across six distinct motion categories. Additionally, it leverages natural language generation (NLG) to convert recognized action states into smooth, human-readable verbal feedback, significantly improving transparency and natural interaction between humans and robots.
 
