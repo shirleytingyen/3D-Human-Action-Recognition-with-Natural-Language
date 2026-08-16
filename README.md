@@ -1,12 +1,18 @@
-# Abstract
+# HRI-Driven 3D Human Action Recognition via ST-GCN on KTH Dataset
+
+This repository contains an end-to-end framework for 3D human action recognition and natural communication in Human-Robot Interaction (HRI) using Spatial Temporal Graph Convolutional Networks (ST-GCN). The pipeline extracts 2D human pose skeletons from raw video sequences of the KTH dataset via MediaPipe, normalizes and structures the keypoint trajectories into COCO-17 topology, and classifies multi-frame human action dynamics across six distinct motion categories. Additionally, it leverages natural language generation (NLG) to convert recognized action states into smooth, human-readable verbal feedback, significantly improving transparency and natural interaction between humans and robots.
+
+---
+
+## Abstract
 
 This project presents a lightweight end-to-end framework for human action recognition (HAR) and automated natural language captioning using Spatio-Temporal Graph Convolutional Networks (ST-GCN). By leveraging MediaPipe Pose Landmarker for 3D skeleton extraction, raw video streams are mapped into standardized COCO-17 keypoint dynamic graphs. Evaluated on the KTH dataset, the ST-GCN model achieves a test classification accuracy of 77.78%. The framework further integrates classification confidence scores with template-based text generation to produce real-time, human-readable action descriptions.
 
-# Motivation
+## Motivation
 
 Traditional frame-based 3D Convolutional Neural Networks (3D-CNNs) incur heavy computational overhead and exhibit high sensitivity to ambient background noise. To resolve these limitations, utilizing lightweight pose estimation isolates human topology while completely filtering out redundant visual backgrounds. Unlike standard sequential architectures that flatten joint coordinates and forfeit intrinsic structural topology, Spatio-Temporal Graph Convolutional Networks (ST-GCN) explicitly represent human joint connections alongside their temporal motion trajectories. Building a lightweight, ST-GCN-centered pipeline achieves precise, structurally aware action recognition while integrating natural, readable text generation to facilitate enhanced Human-Robot Interaction (HRI), providing a highly scalable solution optimized for resource-constrained edge deployments.
 
-# Model Architecture
+## Model Architecture
 
 **ST-GCN Core Network:** The backbone leverages a Spatio-Temporal Graph Convolutional Network (ST-GCN) to process 3D skeleton joints $(17, 3)$ across a 64-frame window. Spatial graph convolutions extract joint layout features using standard physical connectivity, while 1D temporal convolutions capture motion trajectories across frames.
 
@@ -14,7 +20,7 @@ Traditional frame-based 3D Convolutional Neural Networks (3D-CNNs) incur heavy c
 
 **Confidence-Aware Sentence Generation:** Softmax probabilities from the linear classification head are routed to a deterministic language mapping module. Based on confidence thresholds ($\ge 0.90$, $0.75\text{--}0.89$, and $0.60\text{--}0.74$), the output transitions dynamically between definitive ("The person is...") and tentative phrasing ("The person appears to be..." / "It looks like...") to enhance HRI readability.
 
-# Evaluation & Experimental Results
+## Evaluation & Experimental Results
 
 **Action Recognition Performance**
 
