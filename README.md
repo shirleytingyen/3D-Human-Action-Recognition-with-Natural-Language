@@ -8,9 +8,9 @@ Traditional frame-based 3D Convolutional Neural Networks (3D-CNNs) incur heavy c
 
 # Model Architecture
 
-**ST-GCN Core Network:** The backbone leverages a Spatio-Temporal Graph Convolutional Network (ST-GCN) to process 3D skeleton joints $(17, 3)$ across a 64-frame window. Spatial graph convolutions extract joint layout features using standard physical connectivity, while 1D temporal convolutions capture motion trajectories across frames.
+* **ST-GCN Core Network:** The backbone leverages a Spatio-Temporal Graph Convolutional Network (ST-GCN) to process 3D skeleton joints $(17, 3)$ across a 64-frame window. Spatial graph convolutions extract joint layout features using standard physical connectivity, while 1D temporal convolutions capture motion trajectories across frames.
 
-**Lightweight Optimization:** The network uses lightweight spatial-temporal blocks with spatial layout partition and global average pooling to maintain a compact parameter footprint, enabling low-latency inference on CPU environments without hardware acceleration.
+* **Lightweight Optimization:** The network uses lightweight spatial-temporal blocks with spatial layout partition and global average pooling to maintain a compact parameter footprint, enabling low-latency inference on CPU environments without hardware acceleration.
 
 **Confidence-Aware Sentence Generation:** Softmax probabilities from the linear classification head are routed to a deterministic language mapping module. Based on confidence thresholds ($\ge 0.90$, $0.75\text{--}0.89$, and $0.60\text{--}0.74$), the output transitions dynamically between definitive ("The person is...") and tentative phrasing ("The person appears to be..." / "It looks like...") to enhance HRI readability.
 
