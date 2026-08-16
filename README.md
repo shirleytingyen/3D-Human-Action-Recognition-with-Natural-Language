@@ -42,7 +42,7 @@ Training without Early Stopping achieved a higher overall accuracy than training
 * **Patience-Based Early Stopping Recommendation:** Replacing fixed target accuracy thresholds with a patience-based mechanism (monitoring whether Validation Loss/Accuracy fails to improve over $N$ consecutive epochs) ensures the model reaches its full optimization potential without truncating training prematurely.
 
 ---
-## 💾 Dataset Setup
+## 📥 Dataset Setup
 
 This project uses the **KTH Action Dataset** for Spatio-Temporal Action Recognition with Natural Language.
 
